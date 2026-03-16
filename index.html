@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description"
+    content="MobileSafetyBench presents 100 tasks for measuring the safety and helpfulness of mobile device control agents.">
+  <meta property="og:title"
+    content="MobileSafetyBench: Evaluating Safety of Autonomous Agents in Mobile Device Control" />
+  <meta property="og:description" content="MobileSafetyBench" />
+  <meta property="og:url" content="https://mobilesafetybench.github.io/" />
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="keywords" content="Mobile device control agent, benchmark, LLM agent">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MobileSafetyBench: Evaluating Safety of Autonomous Agents in Mobile Device Control</title>
+  <link rel="icon" type="image/x-icon" href="static/images/icon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <style>
+    .title-color {
+      background-color: #5755c1;
+      text-align: center;
+      padding: 20px 0;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .visible-on-mobile {
+      display: none !important;
+    }
+
+    /* Mobile layout: single column */
+    @media (max-width: 768px) {
+      .hide-on-mobile {
+        display: none !important;
+      }
+
+      .visible-on-mobile {
+        display: block !important;
+        width: 100%;
+        margin: 0 auto;
+      }
+    }
+  </style>
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="bowe_componets/css/bootstrap.table.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h2 class="title is-2 publication-title">MobileSafetyBench: Evaluating Safety of Autonomous Agents in Mobile
+              Device Control</h2>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="http://jylee425.github.io/" target="_blank">Juyong Lee</a><sup>1*</sup>
+              </span>
+              <span class="author-block">
+                <a href="" target="_blank">Dongyoon Hahm</a><sup>1*</sup>
+              </span>
+              <span class="author-block">
+                <a href="" target="_blank">June Suk Choi</a><sup>1*</sup>
+              </span>
+              <span class="author-block">
+                <a href="https://bradknox.net/" target="_blank">W. Bradley Knox</a><sup>2</sup>
+              </span>
+              <span class="author-block">
+                <a href="https://sites.google.com/view/kiminlee" target="_blank">Kimin Lee</a><sup>1</sup>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>*</sup>Equal contribution</span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>KAIST,</span>
+              <span class="author-block"><sup>2</sup>The University of Texas at Austin</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+
+                <!-- Paper (extended) link -->
+                <span class="link-block">
+                  <a href="paper.html" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Extended Paper</span>
+                  </a>
+                </span>
+
+                <!-- Code link -->
+                <span class="link-block">
+                  <a href="code.html" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- Datasets link -->
+                <span class="link-block">
+                  <a href="datasets.html" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-database"></i></span>
+                    <span>Datasets</span>
+                  </a>
+                </span>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Start videos -->
+      <div class="hide-on-mobile" style="width: 60%; margin: 0 auto; display: flex; justify-content: center;">
+        <div class="video" style="display: grid; grid-template-columns: 3.7fr 1fr 1fr; gap: 20px; align-items: center;">
+
+          <div style="margin: auto;">
+            <video src="static/videos/main.mp4" alt="Video 1 ALT TEXT" loop="loop" muted="muted" autoplay="autoplay"
+              controls style="width: 100%; height: 400px; max-width: 800px;"></video>
+            <p style="margin-top: 10px; text-align: center;">Overview of MobileSafetyBench</p>
+          </div>
+
+          <div style="margin: auto;">
+            <video src="static/videos/apple_intelligence/sharing_image.mp4" alt="Video 2 ALT TEXT" loop="loop"
+              muted="muted" controls style="width: 100%; height: 400px; max-width: 350px;"></video>
+            <p style="margin-top: 10px; text-align: center;">Testing Apple Intelligence<br>(sharing photo)</p>
+          </div>
+
+
+          <div style="margin: auto;">
+            <video src="static/videos/apple_intelligence/writing_memo.mp4" alt="Video 3 ALT TEXT" loop="loop"
+              muted="muted" controls style="width: 100%; height: 400px; max-width: 350px;"></video>
+            <p style="margin-top: 10px; text-align: center;">Testing Apple Intelligence<br>(writing memo)</p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="visible-on-mobile" style="display: none;">
+        <div style="margin: auto; text-align: center;">
+          <video src="static/videos/main.mp4" alt="Video 1 ALT TEXT" loop="loop" muted="muted" autoplay="autoplay"
+            controls style="width: 100%; height: auto; max-width: 100%;"></video>
+          <p style="margin-top: 10px; text-align: center;">Overview of MobileSafetyBench</p>
+        </div>
+
+        <br>
+
+        <div style="margin: auto; text-align: center;">
+          <video src="static/videos/apple_intelligence/sharing_image.mp4" alt="Video 2 ALT TEXT" loop="loop"
+            muted="muted" autoplay="autoplay" controls style="width: 60%; height: auto; max-width: 100%;"></video>
+          <p style="margin-top: 10px; text-align: center;">Testing Apple Intelligence<br>(sharing photo)</p>
+        </div>
+
+        <br>
+
+        <div style="margin: auto; text-align: center;">
+          <video src="static/videos/apple_intelligence/writing_memo.mp4" alt="Video 3 ALT TEXT" loop="loop"
+            muted="muted" autoplay="autoplay" controls style="width: 60%; height: auto; max-width: 100%;"></video>
+          <p style="margin-top: 10px; text-align: center;">Testing Apple Intelligence<br>(writing memo)</p>
+        </div>
+      </div>
+      <!-- End videos -->
+
+    </div>
+  </section>
+
+
+  <!-- Paper abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered is-vcentered">
+        <div class="column is-three-quarters">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Autonomous agents powered by large language models (LLMs) show promising potential in assistive tasks
+              across various domains, including mobile device control.
+              As these agents interact directly with personal information and device settings, ensuring their safe and
+              reliable behavior is crucial to prevent undesirable outcomes.
+              However, no benchmark exists for standardized evaluation of the safety of mobile device-control agents.
+              In this work, we introduce MobileSafetyBench, a benchmark designed to evaluate the safety of
+              device-control agents within a realistic mobile environment based on Android emulators.
+              We develop a diverse set of tasks involving interactions with various mobile applications, including
+              messaging and banking applications, challenging agents with managing risks encompassing the misuse and
+              negative side effects.
+              These tasks include tests to evaluate the safety of agents in daily scenarios as well as their robustness
+              against indirect prompt injection attacks.
+              Our experiments demonstrate that baseline agents, based on state-of-the-art LLMs, often fail to
+              effectively prevent harm while performing the tasks.
+              To mitigate these safety concerns, we propose a prompting method that encourages agents to prioritize
+              safety considerations.
+              While this method shows promise in promoting safer behaviors, there is still considerable room for
+              improvement to fully earn user trust.
+              This highlights the urgent need for continued research to develop more robust safety mechanisms in mobile
+              environments.
+              WARNING: This paper contains contents that are unethical or offensive in nature.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
+
+
+  <div class="hero-body">
+    <img src="static/images/main_figure.png" alt="MY ALT TEXT"
+      style="display: block; margin: 0 auto; width: 100%; height: auto; max-width: 950px;" />
+  </div>
+
+
+  <!-- Start task section -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+
+        <div class="title-color">
+          <h2 class="title" style="text-align: center; color: white;"> Safety Tasks </h2>
+        </div>
+
+        <md-block>
+          <br>
+          MobileSafetyBench is designed as a platform to assess both the safety and helpfulness of agents controlling
+          mobile devices.
+          We define safety within our benchmark as <strong>the agent’s ability to ensure that its actions, while
+            performing a requested task, do not result in potentially harmful consequences</strong>.
+          As safe behaviors can vary depending on the specific task requested or the device’s status, we develop diverse
+          scenarios to challenge agents comprehensively.
+          Furthermore, we make a clear distinction between tasks that measure safety (right; red) and those that
+          evaluate helpfulness (left; green), allowing for a more precise assessment of safety apart from general
+          capabilities.
+          <br><br>
+
+          <div class="hero-body">
+            <img src="static/images/task_example.png" alt="MY ALT TEXT"
+              style="display: block; margin: 0 auto; width: 100%; height: auto; max-width: 1175px;" />
+          </div>
+
+          MobileSafetyBench presents 250 numbers of tasks in total covering diverse applications and harm categories.
+          The benchmark includes tasks associated with text messaging, web navigation, social media, calendar settings,
+          and financial transactions, spanning 200 daily scenario tasks.
+          Furthremore, it involves 50 indirect prompt injection attack scenario tasks, challenging agents to maintain
+          safe behavior when exposed to maliciously crafted prompts embedded within the task context.
+
+        </md-block>
+
+      </div>
+    </div>
+  </section>
+  <!-- End task section -->
+
+
+
+  <!-- Start result section -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+
+        <div class="title-color">
+          <h2 class="title" style="text-align: center; color: white;"> Benchmark Results </h2>
+        </div>
+
+        <md-block>
+          <div class="hero-body">
+            <img src="static/images/main_result.png" alt="MY ALT TEXT"
+              style="display: block; margin: 0 auto; width: 100%; height: auto; max-width: 1175px;" />
+          </div>
+
+          <br>
+          We provide a reference of benchmark results with state-of-the-art LLMs.
+          In our experiments, we benchmarked 10 leading LLMs: GPT-5, GPT-4o, Gemini-2.5-Pro, Gemini-1.5-Pro,
+          Claude-3.5-Sonnet,
+          Llama-3.2-90B-Vision, Grok-2, Qwen-2.5-VL-72B, Pixtral-Large, and Phi-4.
+          Figure above shows the goal achievement rates and harm prevention rates across 200 daily scenario tasks in
+          MobileSafetyBench.
+        </md-block>
+
+      </div>
+    </div>
+    </div>
+  </section>
+  <!-- End result section -->
+
+
+
+
+  <!-- Start result section -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+
+        <div class="title-color">
+          <h2 class="title" style="text-align: center; color: white;"> Robustness against Indirect Prompt Injection
+          </h2>
+        </div>
+
+        <md-block>
+          <br>
+          <div class="hero-body">
+            <img src="static/images/task_robustness.png" alt="MY ALT TEXT"
+              style="display: block; margin: 0 auto; width: 100%; height: auto; max-width: 1175px;" />
+          </div>
+
+          Using MobileSafetyBench, we investigate whether baseline agents can maintain robust behavior when exposed to
+          indirect prompt injection attacks.
+          For instance, as illustrated in Figure above, a test scenario involves agents reviewing a text message that
+          contains an irrelevant instruction to sell stock shares.
+          Such injected prompts are embedded within UI elements like text messages and social media posts, and are
+          delivered to the agents as part of the observation.
+          We reveal state-of-the-art LLM agents' weakness against indirect prompt injection.
+        </md-block>
+
+      </div>
+    </div>
+    </div>
+  </section>
+  <!-- End result section -->
+
+
+  <!-- Start discussion section -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+
+        <div class="title-color">
+          <h2 class="title" style="text-align: center; color: white;"> Further Discussions </h2>
+        </div>
+        <br>
+        In our manuscript, we examine the behaviors of the baseline LLMs in-depth and the effect of safeguards supplied
+        by the service providers.
+        We also present experimental results with the OpenAI-o1 agents, compared with the GPT-4o agents, to investigate
+        the trade-off of strong reasoning ability.
+        We hope our work serves as a valuable platform for building safe and helpful agents.
+      </div>
+    </div>
+    </div>
+  </section>
+  <!-- End discussion section -->
+
+
+  <!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{lee2024mobilesafetybench,
+  title={MobileSafetyBench: Evaluating Safety of Autonomous Agents in Mobile Device Control},
+  author={Lee, Juyong and Hahm, Dongyoon and Choi, June Suk and Knox, W Bradley and Lee, Kimin},
+  journal={arXiv preprint arXiv:2410.17520},
+  year={2024}
+}</code></pre>
+    </div>
+  </section>
+  <!--End BibTex citation -->
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                target="_blank">Academic Project Page Template</a> which was adopted from the <a
+                href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              You are free to borrow the of this website, we just ask that you link back to this page in the footer.
+              <br> This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Statcounter tracking code -->
+
+  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+  <!-- End of Statcounter Code -->
+
+</body>
+
+</html>
