@@ -85,6 +85,22 @@
           flex-direction: column;
         }
       }
+
+      #tasks-carousel .item {
+        border: none;
+        border-radius: 0;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #tasks-carousel .item img {
+        display: inline-block;
+        max-width: 700px;
+      }
+      #tasks-carousel .slider-pagination .slider-page {
+        background: #333;
+      }
     </style>
 
     <link rel="stylesheet" href="static/css/bulma.min.css" />
@@ -335,18 +351,33 @@
               </li>
             </ul>
 
-            <div style="margin-top: 20px; text-align: center">
-              <img
-                src="static/images/tasks.png"
-                alt="XVR 8 task type examples"
-                style="
-                  display: block;
-                  margin: 0 auto;
-                  width: 100%;
-                  height: auto;
-                  max-width: 1000px;
-                "
-              />
+            <div style="margin-top: 20px">
+              <div id="tasks-carousel" class="carousel results-carousel">
+                <div class="item">
+                  <img src="static/images/tasks_1.png" alt="Task 1" />
+                </div>
+                <div class="item">
+                  <img src="static/images/tasks_2.png" alt="Task 2" />
+                </div>
+                <div class="item">
+                  <img src="static/images/tasks_3.png" alt="Task 3" />
+                </div>
+                <div class="item">
+                  <img src="static/images/tasks_4.png" alt="Task 4" />
+                </div>
+                <div class="item">
+                  <img src="static/images/tasks_5.png" alt="Task 5" />
+                </div>
+                <div class="item">
+                  <img src="static/images/tasks_6.png" alt="Task 6" />
+                </div>
+                <div class="item">
+                  <img src="static/images/tasks_7.png" alt="Task 7" />
+                </div>
+                <div class="item">
+                  <img src="static/images/tasks_8.png" alt="Task 8" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
