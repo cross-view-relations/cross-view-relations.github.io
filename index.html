@@ -338,21 +338,15 @@
               Structure-from-Motion (SfM), operationalized through eight
               specific tasks.
             </p>
-            <ul style="margin-top: 10px">
-              <li>
-                <strong>Correspondence:</strong> Identifying matching elements
-                across views that represent the same physical entity.
-              </li>
-              <li>
-                <strong>Verification:</strong> Checking whether multi-view
-                observations are geometrically or temporally consistent.
-              </li>
-              <li>
-                <strong>Localization:</strong> Determining relative camera
-                positions and which viewpoint corresponds to specific spatial
-                conditions.
-              </li>
-            </ul>
+            <p style="margin-top: 10px">
+              <strong>Correspondence</strong> identifies matching elements
+              across views that represent the same physical entity,
+              <strong>Verification</strong> checks whether multi-view
+              observations are geometrically or temporally consistent, and
+              <strong>Localization</strong> determines relative camera
+              positions and which viewpoint corresponds to specific spatial
+              conditions.
+            </p>
 
             <div style="margin-top: 20px">
               <div id="tasks-carousel" class="carousel results-carousel">
@@ -474,7 +468,8 @@
               Qwen3-VL-2B-XVR achieves a 1.8&times; improvement over its base
               model and ranks first among all evaluated models, surpassing both
               open-source and closed-source alternatives. Notably, it exceeds
-              human performance on Point Correspondence (94.32% vs. 92.31%).
+              human performance on Point Correspondence
+              (94.32% vs. 92.31%, +2.01%).
             </p>
             <div style="margin-top: 15px; text-align: center">
               <img
@@ -523,11 +518,11 @@
               We extend XVR-trained VLMs into Vision-Language-Action (VLA)
               models and evaluate on three RoboCasa manipulation tasks.
               XVR-trained models consistently improve manipulation performance:
-              CoffeePressButton (83.1% &rarr; <strong>89.3%</strong>),
+              CoffeePressButton (83.1% &rarr; <strong>89.3%</strong>, +6.2%),
               TurnOffMicrowave (45.7% &rarr; <strong>72.7%</strong>, +27.0%),
-              and PnPCabToCounter (31.1% &rarr; <strong>38.8%</strong>). The
-              largest gains occur on TurnOffMicrowave, where cross-view spatial
-              disambiguation is most critical.
+              and PnPCabToCounter (31.1% &rarr; <strong>38.8%</strong>, +7.7%).
+              The largest gains occur on TurnOffMicrowave, where cross-view
+              spatial disambiguation is most critical.
             </p>
 
             <!-- robocasa 두 이미지를 투컬럼 배치 -->
