@@ -39,16 +39,25 @@
         height: auto;
       }
 
+      /* Rounded corners on content images */
+      .container img {
+        border-radius: 8px;
+      }
+
       .dataset-table {
         width: 100%;
-        border-collapse: collapse;
+        border-collapse: separate;
+        border-spacing: 0;
         margin: 20px 0;
         font-size: 0.95em;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.06);
       }
 
       .dataset-table th,
       .dataset-table td {
-        border: 1px solid #ddd;
+        border: 1px solid #eee;
         padding: 10px 14px;
         text-align: center;
       }
@@ -86,20 +95,83 @@
         }
       }
 
-      #tasks-carousel .item {
-        border: none;
-        border-radius: 0;
-        text-align: center;
+      /* Task viewer */
+      .task-viewer {
+        margin-top: 20px;
+      }
+      .task-pills {
         display: flex;
+        justify-content: center;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 16px;
+      }
+      .task-pill {
+        padding: 5px 14px;
+        border-radius: 20px;
+        font-size: 0.85em;
+        font-weight: 600;
+        cursor: pointer;
+        border: 2px solid transparent;
+        opacity: 0.5;
+        transition: opacity 0.2s, border-color 0.2s;
+        user-select: none;
+      }
+      .task-pill:hover {
+        opacity: 0.8;
+      }
+      .task-pill.is-active {
+        opacity: 1;
+        border-color: #555;
+      }
+      .task-slide {
+        display: none;
+        text-align: center;
+        height: 420px;
         align-items: center;
         justify-content: center;
       }
-      #tasks-carousel .item img {
-        display: inline-block;
-        max-width: 700px;
+      .task-slide.is-active {
+        display: flex;
       }
-      #tasks-carousel .slider-pagination .slider-page {
-        background: #333;
+      .task-slide img {
+        max-width: 700px;
+        max-height: 420px;
+        display: inline-block;
+        object-fit: contain;
+      }
+      .task-nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        margin-top: 12px;
+      }
+      .task-nav button {
+        background: none;
+        border: 1px solid #ccc;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        cursor: pointer;
+        font-size: 1em;
+        color: #555;
+        transition: background 0.2s;
+      }
+      .task-nav button:hover {
+        background: #f0f0f0;
+      }
+      .task-nav .task-counter {
+        font-size: 0.85em;
+        color: #888;
+      }
+
+      /* BibTeX block */
+      #BibTeX pre {
+        border-radius: 10px;
+        background: #f8f8f8;
+        border: 1px solid #eee;
+        padding: 20px;
       }
     </style>
 
@@ -348,32 +420,29 @@
               conditions.
             </p>
 
-            <div style="margin-top: 20px">
-              <div id="tasks-carousel" class="carousel results-carousel">
-                <div class="item">
-                  <img src="static/images/tasks_1.png" alt="Task 1" />
-                </div>
-                <div class="item">
-                  <img src="static/images/tasks_2.png" alt="Task 2" />
-                </div>
-                <div class="item">
-                  <img src="static/images/tasks_3.png" alt="Task 3" />
-                </div>
-                <div class="item">
-                  <img src="static/images/tasks_4.png" alt="Task 4" />
-                </div>
-                <div class="item">
-                  <img src="static/images/tasks_5.png" alt="Task 5" />
-                </div>
-                <div class="item">
-                  <img src="static/images/tasks_6.png" alt="Task 6" />
-                </div>
-                <div class="item">
-                  <img src="static/images/tasks_7.png" alt="Task 7" />
-                </div>
-                <div class="item">
-                  <img src="static/images/tasks_8.png" alt="Task 8" />
-                </div>
+            <div class="task-viewer" id="taskViewer">
+              <div class="task-pills">
+                <span class="task-pill is-active" data-index="0" style="background:rgb(255,212,208)">Point</span>
+                <span class="task-pill" data-index="1" style="background:rgb(255,212,208)">Directional</span>
+                <span class="task-pill" data-index="2" style="background:rgb(190,255,200)">Spatial</span>
+                <span class="task-pill" data-index="3" style="background:rgb(190,255,200)">Temporal</span>
+                <span class="task-pill" data-index="4" style="background:rgb(214,225,255)">Viewpoint</span>
+                <span class="task-pill" data-index="5" style="background:rgb(214,225,255)">Directional View</span>
+                <span class="task-pill" data-index="6" style="background:rgb(214,225,255)">Cross-Scenario</span>
+                <span class="task-pill" data-index="7" style="background:rgb(214,225,255)">Language-Conditioned</span>
+              </div>
+              <div class="task-slide is-active"><img src="static/images/tasks_1.png" alt="Point" /></div>
+              <div class="task-slide"><img src="static/images/tasks_2.png" alt="Directional" /></div>
+              <div class="task-slide"><img src="static/images/tasks_3.png" alt="Spatial" /></div>
+              <div class="task-slide"><img src="static/images/tasks_4.png" alt="Temporal" /></div>
+              <div class="task-slide"><img src="static/images/tasks_5.png" alt="Viewpoint" /></div>
+              <div class="task-slide"><img src="static/images/tasks_6.png" alt="Directional View" /></div>
+              <div class="task-slide"><img src="static/images/tasks_7.png" alt="Cross-Scenario" /></div>
+              <div class="task-slide"><img src="static/images/tasks_8.png" alt="Language-Conditioned" /></div>
+              <div class="task-nav">
+                <button id="taskPrev">&#8249;</button>
+                <span class="task-counter">1 / 8</span>
+                <button id="taskNext">&#8250;</button>
               </div>
             </div>
           </div>
@@ -584,5 +653,36 @@
         </div>
       </div>
     </footer>
+    <script>
+      (function() {
+        var viewer = document.getElementById('taskViewer');
+        var pills = viewer.querySelectorAll('.task-pill');
+        var slides = viewer.querySelectorAll('.task-slide');
+        var counter = viewer.querySelector('.task-counter');
+        var current = 0;
+
+        function goTo(i) {
+          pills[current].classList.remove('is-active');
+          slides[current].classList.remove('is-active');
+          current = (i + slides.length) % slides.length;
+          pills[current].classList.add('is-active');
+          slides[current].classList.add('is-active');
+          counter.textContent = (current + 1) + ' / ' + slides.length;
+        }
+
+        pills.forEach(function(pill) {
+          pill.addEventListener('click', function() {
+            goTo(parseInt(this.dataset.index));
+          });
+        });
+
+        document.getElementById('taskPrev').addEventListener('click', function() {
+          goTo(current - 1);
+        });
+        document.getElementById('taskNext').addEventListener('click', function() {
+          goTo(current + 1);
+        });
+      })();
+    </script>
   </body>
 </html>
