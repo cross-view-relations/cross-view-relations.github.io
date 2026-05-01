@@ -268,6 +268,16 @@
       .footer {
         background-color: transparent !important;
       }
+
+      /* Stronger abstract body text */
+      #abstract .content,
+      #abstract .content p {
+        color: #1a1a1a;
+      }
+      #abstract .content p {
+        font-size: 1.05em;
+        line-height: 1.7;
+      }
     </style>
 
     <link rel="stylesheet" href="static/css/bulma.min.css" />
@@ -437,6 +447,42 @@
       </div>
     </section>
     <!-- End Hero Section -->
+
+    <!-- Video Section -->
+    <section class="hero is-small">
+      <div class="hero-body">
+        <div class="container is-max-desktop has-text-centered">
+          <div
+            style="
+              position: relative;
+              width: 100%;
+              max-width: 950px;
+              margin: 0 auto;
+              padding-bottom: 53.4%;
+              height: 0;
+              overflow: hidden;
+              border-radius: 8px;
+            "
+          >
+            <iframe
+              src="https://www.youtube.com/embed/HHJIFCg8jKc"
+              title="XVR Video"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+              "
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Video Section -->
 
     <!-- Teaser Section -->
     <section class="hero is-small">
@@ -727,7 +773,12 @@
     <section class="section card-section" id="BibTeX">
       <div class="container is-max-desktop">
         <h2 class="title">BibTeX</h2>
-        <pre><code>TBD</code></pre>
+        <pre><code>@article{jeong2026learning,
+  title={Learning Multi-View Spatial Reasoning from Cross-View Relations},
+  author={Jeong, Suchae and Song, Jaehwi and Lee, Haeone and Kim, Hanna and Kim, Jian and Lee, Dongjun and Shin, Dong Kyu and Kim, Changyeon and Hahm, Dongyoon and Jin, Woogyeol and others},
+  journal={arXiv preprint arXiv:2603.27967},
+  year={2026}
+}</code></pre>
       </div>
     </section>
     <!-- End BibTeX -->
