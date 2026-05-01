@@ -7,11 +7,11 @@ Project page for "Learning Multi-View Spatial Reasoning from Cross-View Relation
 ## Citation
 
 ```bibtex
-@article{jeong2025xvr,
+@article{jeong2026learning,
   title={Learning Multi-View Spatial Reasoning from Cross-View Relations},
-  author={Jeong, Suchae and Song, Jaehwi and Lee, Haeone and Kim, Hanna and Kim, Jian and Lee, Dongjun and Shin, Dong Kyu and Kim, Changyeon and Hahm, Dongyoon and Jin, Woogyeol and Choi, Juheon and Lee, Kimin},
-  year={2025},
-  url={https://cross-view-relations.github.io}
+  author={Jeong, Suchae and Song, Jaehwi and Lee, Haeone and Kim, Hanna and Kim, Jian and Lee, Dongjun and Shin, Dong Kyu and Kim, Changyeon and Hahm, Dongyoon and Jin, Woogyeol and others},
+  journal={arXiv preprint arXiv:2603.27967},
+  year={2026}
 }
 ```
 
